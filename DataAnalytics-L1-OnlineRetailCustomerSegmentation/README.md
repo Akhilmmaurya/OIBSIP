@@ -178,7 +178,8 @@ The primary objective of this project is to use **RFM analysis and K-Means clust
 
 ---
 
-## 👨‍💻 Project Context
+## 👨‍💻 Author
+Akhil
 
 This project was developed as part of a **Data Analytics Internship — Level 1, Task 2** and demonstrates the practical application of:
 
