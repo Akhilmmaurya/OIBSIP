@@ -157,7 +157,10 @@ The primary objective of this project is to demonstrate a practical, end-to-end 
 
 ---
 
-## 👨‍💻 Project Context
+## 👨‍💻 Author
+Akhil
+
+PROJECT CONTEXT
 
 This project demonstrates practical skills in:
 
