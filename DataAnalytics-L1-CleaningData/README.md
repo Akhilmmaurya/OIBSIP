@@ -6,6 +6,8 @@ A clean and well-documented data cleaning pipeline for the classic Titanic datas
 
 ## 📌 Project Overview
 
+This project was developed as part of a Data Analytics Internship (Level 1 – Task 3).
+
 The objective of this project is to address common real-world data quality issues through a systematic preprocessing workflow.
 
 The pipeline includes:
