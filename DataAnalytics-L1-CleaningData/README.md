@@ -1,132 +1,168 @@
-Titanic Dataset - Data Cleaning & Preprocessing
+# 🚢 Titanic Dataset — Data Cleaning & Preprocessing
 
-A clean and documented data cleaning pipeline for the classic Titanic dataset using Python and pandas. This project takes the raw, messy dataset and systematically cleans it for exploratory analysis and machine learning.
+A clean and well-documented data cleaning pipeline for the classic Titanic dataset using **Python** and **pandas**. This project transforms the raw dataset into a structured, analysis-ready version suitable for exploratory data analysis and machine learning.
 
-📌 Project Overview
+---
 
-The goal of this project is to fix common real-world data issues:
+## 📌 Project Overview
 
-Missing values in numerical and categorical fields
+The objective of this project is to address common real-world data quality issues through a systematic preprocessing workflow.
 
-Inconsistent string formats and casing
+The pipeline includes:
 
-Extreme outliers in fare prices
+* Handling missing values
+* Standardizing categorical text
+* Treating extreme outliers
+* Correcting data types
+* Preserving historical records
+* Exporting a clean, reusable dataset
 
-Incorrect data types (e.g., IDs stored as numbers)
+---
 
-Redundant or missing structural records
+## 🛠️ Tech Stack
 
-🛠️ Tech Stack
+| Technology                          | Purpose                      |
+| ----------------------------------- | ---------------------------- |
+| **Python**                          | Programming language         |
+| **Pandas**                          | Data cleaning & manipulation |
+| **NumPy**                           | Numerical operations         |
+| **Jupyter Notebook / Google Colab** | Development environment      |
 
-Language: Python
+---
 
-Libraries: pandas, numpy
+## 🚀 Data Cleaning Workflow
 
-Environment: Jupyter Notebook / Google Colab
+### 1. 🔍 Initial Quality Audit
 
-🚀 Key Cleaning Steps
+Performed a complete inspection of the raw dataset by checking:
 
-Initial Quality Audit: Checked null counts, duplicate rows, data types, and value ranges across all 12 columns.
+* Null values
+* Duplicate records
+* Data types
+* Value ranges
+* Dataset structure across all **12 columns**
 
-Missing Data Handling:
+### 2. 🧹 Missing Data Handling
 
-Embarked: Filled the 2 missing records with the most common port ('S').
+**Embarked**
 
-Age: Extracted passenger titles (Mr, Mrs, Miss, Master, etc.) and filled missing ages using the median age of each specific title group.
+* Filled the **2 missing values** using the most frequent embarkation port: `'S'`.
 
-Cabin: Replaced missing values with 'Unknown' and extracted the deck letter code.
+**Age**
 
-Duplicate Check: Verified that no duplicate passenger records exist.
+* Extracted passenger titles (`Mr`, `Mrs`, `Miss`, `Master`, etc.).
+* Imputed missing ages using the **median age of each title group**.
 
-Text Standardisation: Stripped whitespace and normalized text fields (e.g., standardizing Sex values to 'Male' and 'Female').
+**Cabin**
 
-Outlier Treatment:
+* Replaced missing values with `'Unknown'`.
+* Extracted the deck letter as a new categorical feature.
 
-Retained valid older ages (historical records up to age 80).
+### 3. ✅ Duplicate Validation
 
-Applied soft capping to extreme luxury suite ticket fares at the 99th percentile to prevent distortion while keeping all rows.
+* Verified that the dataset contains **no duplicate passenger records**.
 
-Data Type Casting: Converted PassengerId to string, and categorical columns (Sex, Embarked, Pclass, Title, Deck) to proper categorical types.
+### 4. 📝 Text Standardization
 
-Export: Saved the clean dataset to titanic_cleaned.csv.
+Cleaned categorical text fields by:
 
-📊 Before vs. After Summary
+* Removing leading and trailing whitespace
+* Standardizing casing
+* Normalizing `Sex` values to **Male** and **Female**
 
-Metric / Field
+### 5. 📉 Outlier Treatment
 
-Before Cleaning
+* Retained valid historical ages (up to **80 years**).
+* Applied **soft capping** to extreme luxury ticket fares using the **99th percentile**, reducing skew while preserving every observation.
 
-After Cleaning
+### 6. ⚙️ Data Type Optimization
 
-Total Rows
+Converted the following columns into more appropriate formats:
 
-891
+* `PassengerId` → `string`
+* `Sex` → `category`
+* `Embarked` → `category`
+* `Pclass` → `category`
+* `Title` → `category`
+* `Deck` → `category`
 
-891
+### 7. 💾 Export
 
-Missing Age
+The cleaned dataset was exported as:
 
-177
+```text
+titanic_cleaned.csv
+```
 
-0 (imputed by title median)
+---
 
-Missing Cabin
+## 📊 Before vs. After Cleaning
 
-687
+| **Metric / Field**  | **Before Cleaning** |              **After Cleaning** |
+| ------------------- | ------------------: | ------------------------------: |
+| Total Rows          |                 891 |                             891 |
+| Missing `Age`       |                 177 |   0 *(imputed by title median)* |
+| Missing `Cabin`     |                 687 |        0 *(`Unknown` assigned)* |
+| Missing `Embarked`  |                   2 |           0 *(filled with `S`)* |
+| Duplicate Rows      |                   0 |                               0 |
+| `PassengerId` Type  |             `int64` |                        `string` |
+| Categorical Columns |            `object` |                      `category` |
+| Maximum Fare        |             £512.33 | £249.01 *(99th percentile cap)* |
 
-0 (labeled as 'Unknown')
+---
 
-Missing Embarked
+## 📁 Repository Structure
 
-2
+```text
+Titanic-Data-Cleaning/
+│
+├── Titanic-Dataset.csv
+├── data_cleaning.ipynb
+├── titanic_cleaned.csv
+└── README.md
+```
 
-0 (imputed with 'S')
+---
 
-Duplicate Rows
+## ⚙️ How to Run
 
-0
+### 1. Clone the Repository
 
-0
-
-PassengerId Type
-
-int64
-
-object / string
-
-Categorical Types
-
-object strings
-
-category (memory efficient)
-
-Max Fare
-
-£512.33 (extreme skew)
-
-£249.01 (99th percentile cap)
-
-📁 Repository Structure
-
-├── Titanic-Dataset.csv       # Raw source dataset
-├── data_cleaning.ipynb       # Jupyter notebook with step-by-step code & markdown
-├── titanic_cleaned.csv       # Cleaned, ready-to-use dataset
-└── README.md                 # Project documentation
-
-
-⚙️ How to Run
-
-Clone or download this repository:
-
+```bash
 git clone <repo-url>
 cd <repo-folder>
+```
 
+### 2. Install Dependencies
 
-Install dependencies:
-
+```bash
 pip install pandas numpy
+```
 
+### 3. Open the Notebook
 
-Open and run the notebook:
-
+```bash
 jupyter notebook data_cleaning.ipynb
+```
+
+Run all notebook cells sequentially from **top to bottom** to reproduce the complete data cleaning pipeline and generate the cleaned dataset.
+
+---
+
+## 📌 Project Objective
+
+The primary objective of this project is to demonstrate a practical, end-to-end **data cleaning and preprocessing workflow** by transforming raw Titanic passenger data into a clean, consistent, and machine learning–ready dataset.
+
+---
+
+## 👨‍💻 Project Context
+
+This project demonstrates practical skills in:
+
+* Data quality assessment
+* Missing value imputation
+* Feature engineering
+* Text standardization
+* Outlier treatment
+* Data type optimization
+* Dataset preparation for analytics and machine learning
