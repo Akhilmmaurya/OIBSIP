@@ -20,7 +20,7 @@ By analyzing transactional history through **RFM (Recency, Frequency, Monetary)*
 
 ## 📊 Dataset Description
 
-* **Dataset:** `OnlineRetail.csv`
+* **Dataset:** `OnlineRetail.csv` https://storage.googleapis.com/kaggle-data-sets/3886183/6749811/compressed/OnlineRetail.csv.zip?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=gcp-kaggle-com%40kaggle-161607.iam.gserviceaccount.com%2F20260920%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20260920T163820Z&X-Goog-Expires=259200&X-Goog-SignedHeaders=host&X-Goog-Signature=40773559cca20665131987432dd0d13249c76f010f7d1390c8e1397809de7a295b44c687832ca6459bce1a1e0b642219fa5d7d41fbfa6bf13c4025453d45d3a062d0a0a0e48c6e1ed70c07eebf38d105e4362bbc4cfea1b0a9d5c84395bd5ee0db4478d4be0bf7082e7ab78fb8822e81a93669552a65cea3758e925514cbf3deb41af2c38770df8c039d300b07d24172bf5f162bd026c87e60d08a9a24eeff1b4b22c0dd8987385b31664fce8a121a09a6fae64a57587d82550de1c92188a578cea0f47ab0f84dbfb954ef07c5736dbd3a4a1c8503a27e345473e7096b4a90a92c6f135ec5f7e8a7ad8bbb98fdeb20d0e52f5b99d82b09572264b86f51fa018e
 * **Source:** Online Retail transaction records
 * **Initial Dimensions:** `541,909 rows × 8 columns`
 
