@@ -20,7 +20,7 @@ By analyzing transactional history through **RFM (Recency, Frequency, Monetary)*
 
 ## 📊 Dataset Description
 
-* **Dataset:** `[Online Retail Customer Segmentation Dataset](https://www.kaggle.com/code/vishnupriyagarige/online-retail-customer-segmentation/input)`
+* **Dataset:** [Online Retail Customer Segmentation Dataset](https://www.kaggle.com/code/vishnupriyagarige/online-retail-customer-segmentation/input)`
 * **Source:** Online Retail transaction records
 * **Initial Dimensions:** `541,909 rows × 8 columns`
 
